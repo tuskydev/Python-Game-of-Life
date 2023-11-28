@@ -28,7 +28,7 @@ pip install matplotlib
 ### Add these lines to the .py file:
 ```
 import matplotlib.pyplot as plt
-
+import random
 ```
 
 ### Choose any example code from the Docs here and adjust to the best fit.
