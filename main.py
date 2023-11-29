@@ -46,23 +46,39 @@ def getLiveNeighbors(lists, cell):
   int: The number of alive neighboring cells.
   """
   cellNeighbors = 0
-  currRow = lists[cell[0]]
   prevRow = []
+  currRow = lists[cell[0]]
   nextRow = []
 
+  ## If a cell is at the top wall
   if cell[0] > 0:
     prevRow = lists[cell[0]-1]
+  ## If a cell is at the bottom wall
   if cell[0]+1 <= row-1:
     nextRow = lists[cell[0]+1]
 
-  if prevRow:
-    print("BLUNT",prevRow)
-  if nextRow:
-    print("bye",nextRow)
+
+  ## If a cell is at the left wall
+  if cell[1] == 0:
+    prevRow = prevRow[:2]
+    currRow = currRow[1:2]
+    nextRow = nextRow[:2]
+  ## If a cell is at the right wall
+  elif cell[1] == column-1:
+    prevRow = prevRow[cell[1]-1:column]
+    currRow = currRow[cell[1]-1:column-1]
+    nextRow = nextRow[cell[1]-1:column]
+  ## # If a cell is in the middle
+  else:
+    prevRow = prevRow[cell[1]-1:cell[1]+2]
+    currRow = currRow[cell[1]-1:cell[1]+2:2]
+    nextRow = nextRow[cell[1]-1:cell[1]+2]
+
+  cellNeighbors += sum(prevRow) + sum(currRow) + sum(nextRow)
 
   return cellNeighbors
 
-cell = (3, 2)
+cell = (1, 1)
 print(getLiveNeighbors(listofLists, cell))
 
 
