@@ -29,9 +29,12 @@ pip install matplotlib
 ### Add these lines to the .py file:
 ```
 import matplotlib.pyplot as plt
+from matplotlib.colors import ListedColormap
 import random
 ```
 
 ### Choose any example code from the Docs here and adjust to the best fit.
 
 [matplotlib,pyplot docs](https://matplotlib.org/3.5.3/api/_as_gen/matplotlib.pyplot.html)
+
+[matplotlib Line2D (since this page was so hard to find)](https://matplotlib.org/stable/api/_as_gen/matplotlib.lines.Line2D.html)
