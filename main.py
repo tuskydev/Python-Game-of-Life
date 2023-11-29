@@ -7,11 +7,12 @@ Rules:
 
 1. Any live cell with two or three live neighbours survives.
 2. Any dead cell with three live neighbours becomes a live cell.
-3. All other live cells die in the next generation. Similarly, all other dead cells stay dead.
+3. All other live cells die in the next generation.
+  Similarly, all other dead cells stay dead.
 """
 
-# listofLists = [[1, 1], [1, 1]]
-listofLists = [[random.choice([0, 1]) for _ in range(20)] for _ in range(20)]
+listofLists = [[1, 2], [3, 5]]
+# listofLists = [[random.choice([0, 1]) for _ in range(20)] for _ in range(20)]
 length = (len(listofLists[0])) ## Length; from left to right
 width = (len(listofLists)) ## Width; from top to bottom
 tick = 0
@@ -31,12 +32,25 @@ def populationCount(lists):
 
   return counter
 
-def doesClear():
+def doesClear(lists, cell):
   """
+  Examines the neighboring cells of a given cell and survives if it passes rule #1.
+
+  Parameters:
+  - lists (list): a list of lists
+  - cell (list[index]): list with an index indicating the position of a cell
+
+  Returns:
+  bool: True if the cell dies, False otherwise.
+  """
+  cellNeighbors = 0
+
+  for list in lists:
+    print("this is list", list)
 
 
-  Returns a boolean
-  """
+# print(doesClear(listofLists, ))
+print(listofLists[0][1])
 
 
 
@@ -81,7 +95,9 @@ plt.xlabel(f"Ticks: {tick}               \
            Population count: 1000")
 plt.ylabel("")
 plt.title("Game of Life")
-legendHandles = [plt.Line2D([0], [0], color="w", marker="s", markersize=12, markerfacecolor="#000000", label="Black= Alive"),
-                 plt.Line2D([0], [0], color="k", marker="s", markersize=12, markerfacecolor="#ffffff", label="White = Dead")]
+legendHandles = [plt.Line2D([0], [0], marker="s", markersize=12, markerfacecolor="#000000",
+                            color="w", label="Black= Alive"),
+                 plt.Line2D([0], [0], marker="s", markersize=12, markerfacecolor="#ffffff",
+                            color="k", label="White = Dead")]
 plt.legend(handles=legendHandles, loc="upper right")
-plt.show()
+# plt.show()
