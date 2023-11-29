@@ -11,19 +11,21 @@ Rules:
   Similarly, all other dead cells stay dead.
 """
 
-listofLists = [[1, 2], [3, 5]]
-# listofLists = [[random.choice([0, 1]) for _ in range(20)] for _ in range(20)]
-length = (len(listofLists[0])) ## Length; from left to right
-width = (len(listofLists)) ## Width; from top to bottom
+# listofLists = [[1, 0], [1, 1]]
+listofLists = [[random.choice([0, 1]) for _ in range(4)] for _ in range(4)]
+row = (len(listofLists[0])) ## Left to right
+column = (len(listofLists)) ## Top to bottom
 tick = 0
 
 def populationCount(lists):
   """
-  lists: a list of lists
-
   Calculates how many live cells there are in the current tick
 
-  Returns an int
+  Parameters:
+  - lists: a list of lists
+
+  Returns:
+  int: The sum of all living cells.
   """
   counter = 0
 
@@ -32,47 +34,47 @@ def populationCount(lists):
 
   return counter
 
-def doesClear(lists, cell):
+def getLiveNeighbors(lists, cell):
   """
-  Examines the neighboring cells of a given cell and survives if it passes rule #1.
+  Examines the neighboring cells of a given cell
 
   Parameters:
   - lists (list): a list of lists
-  - cell (list[index]): list with an index indicating the position of a cell
+  - cell (tuple): a tuple with two integers representing the (row, column) position of a cell
 
   Returns:
-  bool: True if the cell dies, False otherwise.
+  int: The number of alive neighboring cells.
   """
   cellNeighbors = 0
+  currRow = lists[cell[0]]
+  prevRow = []
+  nextRow = []
 
-  for list in lists:
-    print("this is list", list)
+  if cell[0] > 0:
+    prevRow = lists[cell[0]-1]
+  if cell[0]+1 <= row-1:
+    nextRow = lists[cell[0]+1]
 
+  if prevRow:
+    print("BLUNT",prevRow)
+  if nextRow:
+    print("bye",nextRow)
 
-# print(doesClear(listofLists, ))
-print(listofLists[0][1])
+  return cellNeighbors
 
-
-
-
-
-
-def birthCell(list, ):
-  """
-
-  Returns a boolean
-  """
-
-
-
-
+cell = (3, 2)
+print(getLiveNeighbors(listofLists, cell))
 
 
 def update():
   """
+  Updates the game by one tick
 
-  Updates
-  Returns a new list of lists holding all the cells
+  Parameters:
+  -
+
+  Returns:
+  None
   """
 
 
@@ -85,11 +87,11 @@ def update():
 
 plt.figure(figsize=(9, 8.5))
 # Set x and y ticks dynamically based on the data size
-xticks = [i-0.5 for i in range(width)]
-yticks = [i-0.525 for i in range(length)]
+xticks = [i-0.5 for i in range(column)]
+yticks = [i-0.51 for i in range(row)]
 plt.xticks(xticks, labels="")
 plt.yticks(yticks, labels="")
-plt.imshow(listofLists, cmap=ListedColormap(['#000000', '#ffffff']))
+plt.imshow(listofLists, cmap=ListedColormap(['#ffffff', '#000000']))
 plt.grid()
 plt.xlabel(f"Ticks: {tick}               \
            Population count: 1000")
@@ -100,4 +102,4 @@ legendHandles = [plt.Line2D([0], [0], marker="s", markersize=12, markerfacecolor
                  plt.Line2D([0], [0], marker="s", markersize=12, markerfacecolor="#ffffff",
                             color="k", label="White = Dead")]
 plt.legend(handles=legendHandles, loc="upper right")
-# plt.show()
+plt.show()
