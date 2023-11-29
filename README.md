@@ -12,8 +12,9 @@
 ### Image of behind-the-scenes understanding the logic behind the project
 ![image](https://github.com/tuskydev/Python-Game-of-Life/assets/52723004/44a57c00-bc9c-4f09-8b7a-e05ba0d1bfad)
 
-### Image of the Pop-up-Bar's integrated and dynamic Carousel 
-![image](https://user-images.githubusercontent.com/52723004/93537444-7d4e3f00-f919-11ea-94d4-43ab6a3205a9.png)
+### (It's alive!) Grid graph and alive/dead cells assigned 
+![image](https://github.com/tuskydev/Python-Game-of-Life/assets/52723004/7867a4c8-8213-47f0-9508-8e8169c4d658)
+
 
 ## Key notes:
 * Abandoning pylab import module
