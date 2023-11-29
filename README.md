@@ -3,8 +3,8 @@
 
 ### Things learned:
 * Sharpened Python and graph visualization skills
-* Learned how to ...
-* Learned how to combine two personal Solo Projects to make one dynamic project!
+* Optimizing my queries with ChatGPT to help me navigate matplotlib documents
+* Delving into matplotlib as a whole was a great experience!!!
 
 ### Overall, a productive project which allowed for better understanding of Python and matplotlib.
 
@@ -12,8 +12,9 @@
 ### Image of behind-the-scenes understanding the logic behind the project
 ![image](https://github.com/tuskydev/Python-Game-of-Life/assets/52723004/44a57c00-bc9c-4f09-8b7a-e05ba0d1bfad)
 
-### Image of the Pop-up-Bar's integrated and dynamic Carousel 
-![image](https://user-images.githubusercontent.com/52723004/93537444-7d4e3f00-f919-11ea-94d4-43ab6a3205a9.png)
+### (It's alive!) Grid graph and alive/dead cells assigned 
+![image](https://github.com/tuskydev/Python-Game-of-Life/assets/52723004/7867a4c8-8213-47f0-9508-8e8169c4d658)
+
 
 ## Key notes:
 * Abandoning pylab import module
@@ -28,9 +29,12 @@ pip install matplotlib
 ### Add these lines to the .py file:
 ```
 import matplotlib.pyplot as plt
+from matplotlib.colors import ListedColormap
 import random
 ```
 
 ### Choose any example code from the Docs here and adjust to the best fit.
 
 [matplotlib,pyplot docs](https://matplotlib.org/3.5.3/api/_as_gen/matplotlib.pyplot.html)
+
+[matplotlib Line2D (since this page was so hard to find)](https://matplotlib.org/stable/api/_as_gen/matplotlib.lines.Line2D.html)
