@@ -3,8 +3,8 @@
 
 ### Things learned:
 * Sharpened Python and graph visualization skills
-* Learned how to ...
-* Learned how to combine two personal Solo Projects to make one dynamic project!
+* Optimizing my queries with ChatGPT to help me navigate matplotlib documents
+* Delving into matplotlib as a whole was a great experience!!!
 
 ### Overall, a productive project which allowed for better understanding of Python and matplotlib.
 
