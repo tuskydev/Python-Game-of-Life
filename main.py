@@ -2,12 +2,32 @@ import matplotlib.pyplot as plt
 from matplotlib.colors import ListedColormap
 import random
 
-
-listofLists = [[random.choice([0, 1]) for _ in range(20)] for _ in range(20)]
 # listofLists = [[1, 1], [1, 1]]
+listofLists = [[random.choice([0, 1]) for _ in range(20)] for _ in range(20)]
 length = (len(listofLists[0])) ## Length; from left to right
 width = (len(listofLists)) ## Width; from top to bottom
 count = 0
+
+## Implement populationCount function
+def populationCount(lists):
+  counter = 0
+
+  for list in lists:
+    counter += sum(list)
+
+  return counter
+
+print(populationCount(listofLists))
+
+
+
+
+
+
+
+
+
+
 
 plt.figure(figsize=(9, 8.5))
 # Set x and y ticks dynamically based on the data size
