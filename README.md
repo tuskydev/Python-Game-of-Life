@@ -4,11 +4,14 @@
 ### Things learned:
 * Sharpened Python and graph visualization skills
 * Optimizing my queries with ChatGPT to help me navigate matplotlib documents
-* Delving into matplotlib as a whole was a great experience!!!
+* Copying lists deeply is KEY in this project, t'was my biggest rock in the way by far
 
 ### Overall, a productive project which allowed for better understanding of Python and matplotlib.
 
 ## Preview of work done:
+### Mini opus
+![image](https://github.com/tuskydev/Python-Game-of-Life/assets/52723004/63774060-3ad3-436d-9a09-43c7a71929b8)
+
 ### Image of behind-the-scenes understanding the logic behind the project
 ![image](https://github.com/tuskydev/Python-Game-of-Life/assets/52723004/44a57c00-bc9c-4f09-8b7a-e05ba0d1bfad)
 
