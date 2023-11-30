@@ -11,7 +11,7 @@ Rules:
   Similarly, all other dead cells stay dead.
 """
 
-listofLists = [[random.choice([0, 1]) for _ in range(15)] for _ in range(15)]
+listofLists = [[random.choice([0, 1]) for _ in range(175)] for _ in range(175)]
 row = (len(listofLists[0])) # Left to right
 column = (len(listofLists)) # Top to bottom
 tick = 0
@@ -108,14 +108,7 @@ def update():
 def animate():
   global listofLists
 
-  _, ax = plt.subplots(figsize=(9, 8.5))
-  xticks = [i - 0.5 for i in range(column)]
-  yticks = [i - 0.51 for i in range(row)]
-  ax.set_xticks(xticks)
-  ax.set_xticklabels(labels="")
-  ax.set_yticks(yticks)
-  ax.set_yticklabels(labels="")
-  ax.grid()
+  fig, ax = plt.subplots(figsize=(9,8.5))
   ax.set_ylabel("")
   ax.set_title("Game of Life")
   img = ax.imshow(listofLists, cmap=ListedColormap(['#ffffff', '#000000']))
@@ -124,14 +117,13 @@ def animate():
                             color="w", label="Black= Alive"),
                   plt.Line2D([0], [0], marker="s", markersize=12, markerfacecolor="#ffffff",
                             color="k", label="White = Dead")]
-  ax.legend(handles=legendHandles, loc="upper right")
+  fig.legend(handles=legendHandles, loc="upper right")
 
   while getPopCount(listofLists) > 0:
-    ax.set_xlabel(f"Ticks: {tick}       \
-                  Population count: {getPopCount(listofLists)}")
+    ax.set_xlabel(f"Ticks: {tick}   Population count: {getPopCount(listofLists)}")
     img.set_data(listofLists)
     update()
-    plt.pause(.001)
+    plt.pause(.05)
 
 animate()
 plt.show()
