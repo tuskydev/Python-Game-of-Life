@@ -20,7 +20,7 @@
 
 
 ## Key notes:
-* Abandoning pylab import module
+* Stopping pylab import module use
 
 ## Steps to recreate:
 
